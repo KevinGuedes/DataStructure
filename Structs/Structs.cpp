@@ -35,7 +35,8 @@ int main()
 
 	for (int i = 0; i < size; i++) {
 		cout << "Current Name: " << products[i].name << endl;
-		cout << "New Name: "; cin.getline(products[i].name, 30);
+		cout << "New Name: "; 
+		cin.getline(products[i].name, 30);
 		cout << "New Name Length: " << strlen(products[i].name) << endl;
 		accessStructValues(products[i]);
 		cout << "\n\n";
@@ -43,6 +44,8 @@ int main()
 
 	//other funny things
 	//pb.name = "spdasdas"; wont work
+	char test[10] = "kevin";
+	cout << test << endl;
 	strcpy_s(pb.name, "New name with strcpy()");
 	accessStructValues(pb);
 	cout << strcmp("ola", "ola"); //if zero they are equal
