@@ -4,33 +4,41 @@ using namespace std;
 
 #include <iostream>
 
-void insertNumberAt(int, int[], int&);
+void insertNumber(int[], int&);
 void showList(int[], int);
 void showElementAt(int[], int);
 int sequenceSearch(int, int[], int);
-void removeElement(int, int[], int);
+void removeElement(int, int[], int&);
 
 int main()
 {
 	int currentSize = 2, data[realSize] = { 10, 20, NULL };
-	insertNumberAt(2, data, currentSize);
-	showElementAt(data, 2);
-	removeElement(20, data, currentSize);
+	showList(data, currentSize);
+
+	insertNumber(data, currentSize);
+	showList(data, currentSize);
+
+	showElementAt(data, currentSize);
+
+	int elementToBeRemoved;
+	cout << "Which element you want to remove? ";
+	cin >> elementToBeRemoved;
+	cout << endl;
+	removeElement(elementToBeRemoved, data, currentSize);
 
 	return EXIT_SUCCESS;
 }
 
-void insertNumberAt(int index, int data[], int& currentSize) {
+void insertNumber(int data[], int& currentSize) {
 
 	if (realSize == currentSize)
 		cout << "List is fully alocated" << endl;
 	else {
 		int newNumber;
-		cout << "Type the number you want to enter at index #" << index << ": ";
+		cout << "Type the number you want to enter: ";
 		cin >> newNumber;
 		cout << endl;
-		data[index] = newNumber;
-		showList(data, currentSize);
+		data[currentSize] = newNumber;
 		currentSize++;
 	}
 
@@ -52,18 +60,20 @@ void showElementAt(int data[], int currentSize) {
 	}
 }
 
-void removeElement(int element, int data[], int size) {
-	int elementIndex = sequenceSearch(element, data, size);
+void removeElement(int element, int data[], int& currentSize) {
+	int elementIndex = sequenceSearch(element, data, currentSize);
 
 	if (elementIndex == -1)
 		cout << "Empty list" << endl;
 	else if (elementIndex == -2)
 		cout << "Element not found" << endl;
 	else {
-		for (int i = elementIndex; i < size - 1; i++)
+		for (int i = elementIndex; i < currentSize - 1; i++)
 			data[i] = data[i + 1];
 
-		showList(data, size);
+		currentSize--;
+		cout << endl;
+		showList(data, currentSize);
 	}
 }
 
