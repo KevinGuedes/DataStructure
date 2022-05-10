@@ -44,8 +44,6 @@ int main()
 
 	//other funny things
 	//pb.name = "spdasdas"; wont work
-	char test[10] = "kevin";
-	cout << test << endl;
 	strcpy_s(pb.name, "New name with strcpy()");
 	accessStructValues(pb);
 	cout << strcmp("ola", "ola"); //if zero they are equal
