@@ -55,5 +55,7 @@ void bubble(int data[], int size)
 				data[j] = data[j - 1];
 				data[j - 1] = aux;
 			}
+
+	//not working
 }
 
