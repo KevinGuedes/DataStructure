@@ -13,5 +13,8 @@ int main()
 
 	char test[10] = "kevin";
 	cout << test << endl;
+
+
+	//char count[3] = "kev"; //One character is reserved for null, only 2 can be stored
 }
 

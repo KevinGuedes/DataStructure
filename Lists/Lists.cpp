@@ -26,6 +26,9 @@ int main()
 	cout << endl;
 	removeElement(elementToBeRemoved, data, currentSize);
 
+	insertNumber(data, currentSize);
+	showList(data, currentSize);
+
 	return EXIT_SUCCESS;
 }
 
@@ -51,7 +54,7 @@ void showElementAt(int data[], int currentSize) {
 		cout << "Type the index of the element you want: ";
 		int index;
 		cin >> index;
-		cout << endl;
+		cout << endl << endl;
 
 		if (index + 1 > currentSize)
 			cout << "No element is alocated at index #" << index << endl;
