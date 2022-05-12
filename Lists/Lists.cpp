@@ -2,8 +2,6 @@
 #define realSize 3
 using namespace std;
 
-#include <iostream>
-
 void insertNumber(int[], int&);
 void showList(int[], int);
 void showElementAt(int[], int);
