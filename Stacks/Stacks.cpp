@@ -53,7 +53,7 @@ void pop(int stack[], int& topElementIndex, int& lastPoppedElement) {
 	if (isEmpty(topElementIndex))
 		cout << "Failed to remove element from the stack" << endl;
 	else {
-		lastPoppedElement = stack[topElementIndex]; //
+		lastPoppedElement = stack[topElementIndex];
 		topElementIndex--; //The element is not removed, but the top index is updated
 	}
 }

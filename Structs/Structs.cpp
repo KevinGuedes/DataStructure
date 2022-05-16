@@ -22,8 +22,8 @@ struct order {
 
 #pragma region Declarations
 void accessStructValues(product);
-void pretendToChangeStructValue(int);
-void actuallyChangingStructValue(int&);
+void pretendToChangeStructValue(product);
+void actuallyChangingStructValue(product&);
 void manipulateArray(product[], int);
 #pragma endregion
 
@@ -56,9 +56,10 @@ int main()
 	cout << "Product Ordered: " << o.p.name << endl;
 
 	//reference as parameter
-	pretendToChangeStructValue(pa.quantity);
+	pretendToChangeStructValue(pa);
 	accessStructValues(pa);
-	actuallyChangingStructValue(pa.quantity);
+	actuallyChangingStructValue(pa); 
+	//The method above could receive only one property from the struct as reference or the entire struct as reference. Both approaches will change the property value
 	accessStructValues(pa);
 
 	//function as struct's property
@@ -75,12 +76,12 @@ void accessStructValues(product p) {
 	cout << "Name: " << p.name << " - Quantity: " << p.quantity << " - Price: $" << p.price << endl;
 }
 
-void pretendToChangeStructValue(int quantity) {
-	quantity += 200;
+void pretendToChangeStructValue(product product) {
+	product.quantity += 200;
 }
 
-void actuallyChangingStructValue(int& quantity) {
-	quantity += 200;
+void actuallyChangingStructValue(product& product) {
+	product.quantity += 200;
 }
 
 void manipulateArray(product products[], int productsCount) {
