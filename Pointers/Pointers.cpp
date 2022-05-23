@@ -15,6 +15,8 @@ int main()
 	cout << "Value: " << count << endl;
 	cout << "Address: " << &count << endl;
 	cout << "Pointer data: " << ptrCount << endl;
+	cout << "Pointer address: " << &ptrCount << endl;
+
 	cout << "Data from the address pointed by the pointer: " << *ptrCount << endl;
 
 	product p1 = { 10.99, "Hammer" };

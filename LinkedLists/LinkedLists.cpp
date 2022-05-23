@@ -6,9 +6,8 @@ struct element {
 	element* next;
 };
 
-void showElementData(element*);
 element* insertAtStart(element*, int);
-
+void showElementData(element*);
 
 int main()
 {
@@ -19,19 +18,17 @@ int main()
 	//Insertion ate the end of the list
 	el1->next = new element;
 	el1->next->data = 4;
-	el1->next->next = NULL;
+	el1->next->next = NULL; //0
 
+	cout << "Last element address: " << el1->next->next << endl;
 
 	delete el1;
 	cout << "After delete: " << el1 << endl;
 	el1 = 0;
 	cout << "After equal to 0: " << el1 << endl;
 
-
-
 	element* list = NULL;
 	list = insertAtStart(list, 999);
-
 
 	return EXIT_SUCCESS;
 }
